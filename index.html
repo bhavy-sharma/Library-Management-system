@@ -1,47 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="css/main_page.css">
-    </script>
-    <title>Library Management System</title>
-  </head>
-  <body>
-    <h1 id="portal">Online Library Portal</h1>
-    <hr>
-    <!-- admin login -->
-    <div class="main_user_block" id="admin">
-        <!-- user image -->
-        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-        width="96" height="96"
-        viewBox="0 0 192 192"
-        style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,192v-192h192v192z" fill="none"></path><path d="M96,192c-53.01934,0 -96,-42.98066 -96,-96v0c0,-53.01934 42.98066,-96 96,-96v0c53.01934,0 96,42.98066 96,96v0c0,53.01934 -42.98066,96 -96,96z" fill="#cccccc"></path><g fill="#666666"><g id="surface1"><path d="M96,40.32c-15.38812,0 -27.84,12.45188 -27.84,27.84c0,15.38813 12.45188,27.84 27.84,27.84c15.38813,0 27.84,-12.45187 27.84,-27.84c0,-15.38812 -12.45187,-27.84 -27.84,-27.84zM75.3375,105.7875c-26.29031,7.96594 -35.0175,29.58 -35.0175,29.58v16.3125h111.36v-16.3125c0,0 -8.72719,-21.61406 -35.0175,-29.58c-1.44094,10.14094 -10.14094,18.0525 -20.6625,18.0525c-10.52156,0 -19.22156,-7.91156 -20.6625,-18.0525z"></path></g></g></g></svg>
-        <br>
-        <!-- button login -->
-        <button class="login_button" type="button" onclick="location.href='admin_login.html'">Admin Login </button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Library Management System</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
 
+  <!-- Navbar -->
+  <header class="bg-indigo-600 text-white shadow">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold">📚 Library Management System</h1>
+      <div>
+        <a href="login.html"><button class="bg-indigo-500 hover:bg-indigo-700 px-4 py-2 rounded">Login</button></a>
+      </div>
     </div>
+  </header>
 
-    <!-- user login -->
-    <div class="main_user_block" id="user">
-        <!-- user image -->
-        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-        width="96" height="96"
-        viewBox="0 0 192 192"
-        style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,192v-192h192v192z" fill="none"></path><path d="M96,192c-53.01934,0 -96,-42.98066 -96,-96v0c0,-53.01934 42.98066,-96 96,-96v0c53.01934,0 96,42.98066 96,96v0c0,53.01934 -42.98066,96 -96,96z" fill="#cccccc"></path><g fill="#666666"><g id="surface1"><path d="M96,40.32c-15.38812,0 -27.84,12.45188 -27.84,27.84c0,15.38813 12.45188,27.84 27.84,27.84c15.38813,0 27.84,-12.45187 27.84,-27.84c0,-15.38812 -12.45187,-27.84 -27.84,-27.84zM75.3375,105.7875c-26.29031,7.96594 -35.0175,29.58 -35.0175,29.58v16.3125h111.36v-16.3125c0,0 -8.72719,-21.61406 -35.0175,-29.58c-1.44094,10.14094 -10.14094,18.0525 -20.6625,18.0525c-10.52156,0 -19.22156,-7.91156 -20.6625,-18.0525z"></path></g></g></g></svg>
-        <br>
-        <!-- button login -->
-        <button class="login_button" type="button" onclick="location.href='usr_login.html'">User Login</button>
+  <div class="flex min-h-screen">
 
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white shadow-md p-4 hidden md:block">
+      <nav class="space-y-4">
+        <a href="#" class="block text-indigo-600 font-semibold">🏠 Dashboard</a>
+        <a href="add_book.html" class="block text-gray-700 hover:text-indigo-600">📖 Add Books</a>
+        <a href="manage_members.html" class="block text-gray-700 hover:text-indigo-600">👥 Manage Members</a>
+        <a href="view_book.html" class="block text-gray-700 hover:text-indigo-600">📚 View All Books</a>
+        <a href="issued_books.html" class="block text-gray-700 hover:text-indigo-600">🔄 Issue/Return</a>
+        <a href="setting.html" class="block text-gray-700 hover:text-indigo-600">⚙️ Settings</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6">
+    <div class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-bold mb-4">Welcome to the Library!</h2>
+      <p class="text-gray-700 mb-4">
+        Use the menu to manage books, members, and track issues/returns.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-4 mt-6">
+        <a href="add_book.html" class="block">
+        <div class="bg-indigo-100 p-4 rounded shadow hover:bg-indigo-200 transition cursor-pointer">
+          <h3 class="text-lg font-semibold mb-2">➕ Add New Book</h3>
+          <p class="text-sm text-gray-700">Add a new book to the library system.</p>
+        </div>
+        </a>
+        <a href="manage_members.html" class="block">
+        <div class="bg-green-100 p-4 rounded shadow hover:bg-green-200 transition cursor-pointer">
+          <h3 class="text-lg font-semibold mb-2">👥 Members</h3>
+          <p class="text-sm text-gray-700">View and manage library members.</p>
+        </div>
+        </a>
+        <a href="issued_books.html" class="block">
+        <div class="bg-yellow-100 p-4 rounded shadow hover:bg-yellow-200 transition cursor-pointer">
+          <h3 class="text-lg font-semibold mb-2">📚 Issued Books</h3>
+          <p class="text-sm text-gray-700">Track and return issued books.</p>
+        </div>
+        </a>
+      </div>
     </div>
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="/__/firebase/6.0.2/firebase-app.js"></script>
+    </main>
+  </div>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#reserved-urls -->
-
-<!-- Initialize Firebase -->
-<script src="/__/firebase/init.js"></script>
-
-  </body>
+</body>
 </html>

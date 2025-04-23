@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Issued Books</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <!-- Navbar -->
+  <header class="bg-indigo-600 text-white shadow">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold">📖 Issued Books</h1>
+      <a href="index.html" class="text-white hover:underline">← Back to Dashboard</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-5xl mx-auto p-6 mt-6 bg-white rounded-lg shadow">
+    <h2 class="text-2xl font-semibold text-indigo-700 mb-4">Issue a Book</h2>
+
+    <form id="issueForm" class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+      <input type="text" name="bookId" placeholder="Book ID" required class="border border-gray-300 rounded p-2 w-full">
+      <input type="text" name="memberId" placeholder="Member ID" required class="border border-gray-300 rounded p-2 w-full">
+      <input type="date" name="issueDate" required class="border border-gray-300 rounded p-2 w-full">
+      <button type="submit" class="col-span-1 md:col-span-3 bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-700">
+        🚀 Issue Book
+      </button>
+    </form>
+
+    <h3 class="text-xl font-semibold text-gray-800 mb-2">📝 Issued Books List</h3>
+    <table class="w-full table-auto text-left border border-gray-300 rounded">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="p-2 border">Book ID</th>
+          <th class="p-2 border">Member ID</th>
+          <th class="p-2 border">Issue Date</th>
+        </tr>
+      </thead>
+      <tbody id="issueTableBody" class="bg-white">
+        <!-- Issued books will be shown here -->
+      </tbody>
+    </table>
+  </main>
+
+  <!-- JavaScript -->
+  <script>
+    const issueForm = document.getElementById('issueForm');
+    const issueTableBody = document.getElementById('issueTableBody');
+
+    issueForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const bookId = issueForm.bookId.value.trim();
+      const memberId = issueForm.memberId.value.trim();
+      const issueDate = issueForm.issueDate.value;
+
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td class="border px-2 py-1">${bookId}</td>
+        <td class="border px-2 py-1">${memberId}</td>
+        <td class="border px-2 py-1">${issueDate}</td>
+      `;
+      issueTableBody.appendChild(row);
+      issueForm.reset();
+    });
+  </script>
+
+</body>
+</html>
